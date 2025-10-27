@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/TaxTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="157dp"
+        android:text="Tax Calculator App"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTaxInput"
+        android:layout_width="326dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:hint="Enter amount"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TaxTextView" />
+
+    <SeekBar
+        android:id="@+id/seekBarTax"
+        android:layout_width="398dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="88dp"
+        android:max="100"
+        android:progress="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTaxInput"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonTax"
+        android:layout_width="145dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="60dp"
+        android:text="Calculate Tax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarTax" />
+
+    <TextView
+        android:id="@+id/TaxTextViewResult"
+        android:layout_width="176dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="52dp"
+        android:text="Result Appear here"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTax" />
+
+    <TextView
+        android:id="@+id/textViewTaxRate"
+        android:layout_width="88dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="40dp"
+        android:text="Tax : X%"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTaxInput" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,45 @@
+#include "FreeRTOS.h"
+#include "task.h"
+
+#include <avr/io.h>
+
+TaskHandle_t xPedestrianHandle = NULL;
+
+void vVehicleLightTask(void *pvParameters);
+void vPedestrianLightTask(void *pvParameters);
+
+int main(void)
+{
+	DDRB = 0xFF;//PORTB as output for vehicle lights
+	DDRD = 0xFF;//PORTD as output for pedestrian lights
+
+	xTaskCreate(vVehicleLightTask, "VehicleLight", 256, NULL, 1, NULL);
+	xTaskCreate(vPedestrianLightTask, "PedestrianLight", 256, NULL, 2, &xPedestrianHandle);
+
+	vTaskStartScheduler();
+
+	for(;;);
+	return 0;
+}
+
+void vVehicleLightTask(void *pvParameters)
+{
+	TickType_t xLastWakeTime = xTaskGetTickCount();
+
+	while(1)
+	{
+		
+		
+	}
+}
+
+void vPedestrianLightTask(void *pvParameters)
+{
+	TickType_t xLastWakeTime = xTaskGetTickCount();
+
+	while(1)
+	{
+		
+		
+	}
+}

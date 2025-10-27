@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string-array name="T_view">
+        <item>Hamdy</item>
+        <item>Ahmed</item>
+        <item>Osama</item>
+        <item>Pierre</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
