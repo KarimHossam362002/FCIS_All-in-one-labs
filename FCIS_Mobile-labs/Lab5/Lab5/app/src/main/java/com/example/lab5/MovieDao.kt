@@ -1,10 +1,8 @@
 package com.example.lab5
 
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
+@Dao
 interface MovieDao {
     @Insert
     suspend fun insertMovie(movie: Movie)
