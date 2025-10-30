@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lab5</string>
+    <string name="save_movie">Save Movie</string>
+    <string name="show_all_movies">Show All Movies</string>
+    <string name="back">Back</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="show_actors">Show actors</string>
+    <string name="enter_actor_name">Enter actor name</string>
+    <string name="add_actor">Add actor</string>
+
+</resources>
