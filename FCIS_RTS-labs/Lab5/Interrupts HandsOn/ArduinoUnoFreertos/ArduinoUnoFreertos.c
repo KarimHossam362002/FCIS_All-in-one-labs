@@ -64,8 +64,8 @@ static void vGetNextTrack()
 	  lValueToSend = (char *)playList[playListIndex];
  	// 2. send lValueToSend to Queue using appropriate methods 'suffix by FromISR'
 	 lastInterrupt = xQueueSendFromISR(xQueue, &lValueToSend, 0);
-    if( xStatus != pdPASS )
-      USART_sendstr("Could not send to the queue.");
+    //if( xStatus != pdPASS )
+      //USART_sendstr("Could not send to the queue.");
 	 		
     lastInterrupt = xTaskGetTickCountFromISR();
 	
@@ -85,8 +85,8 @@ static void vReceiverTask( void *pvParameters )
    	TickType_t xLastWakeTime = xTaskGetTickCount();
 	for( ;; )
 	{
-		if( uxQueueMessagesWaiting( xQueue ) != 0 )
-			USART_sendstr("Queue should have been empty!\r\n");
+		//if( uxQueueMessagesWaiting( xQueue ) != 0 )
+		//USART_sendstr("Queue should have been empty!\r\n");
 			
 		xStatus = xQueueReceive( xQueue, &lReceivedValue, xTicksToWait );
 		if( xStatus == pdPASS )
@@ -95,8 +95,8 @@ static void vReceiverTask( void *pvParameters )
 			USART_sendstr(lReceivedValue);
 			USART_sendstr( "\r\n");
 		}
-		else
-			USART_sendstr("Could not receive from the queue.\r\n" );
+		//else
+			//USART_sendstr("Could not receive from the queue.\r\n" );
 		
 		vTaskDelayUntil(&xLastWakeTime, (1000 / portTICK_PERIOD_MS));
 	}
