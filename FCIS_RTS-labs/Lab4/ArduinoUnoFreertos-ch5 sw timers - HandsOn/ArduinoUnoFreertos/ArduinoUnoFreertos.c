@@ -8,6 +8,7 @@
 #include "USART.h"
 #define F_CPU 16000000UL
 TimerHandle_t Timer_Function1;
+
 void MyTimer( TimerHandle_t Timer_Function1 )
 {
 	/*toggle the led on portD pin 5*/
@@ -27,10 +28,10 @@ void Task1(void* para)
 		
 		*/
 		USART_sendstr("Type character d , i , s , r \r\n");
-		char c = USART_receive();
+		char c = USART_receive(); // input
 		USART_sendstr("you Typed : \n");
 		USART_send(c);
-		
+		// Double
 		if (c == 'd'){
 			xTimerChangePeriod(Timer_Function1,period*2,100);
 		}
@@ -47,6 +48,7 @@ void Task1(void* para)
 		}
 		else{
 			USART_sendstr("Wrong Character , Exiting... \n");
+			break;
 		}
 
 	}
