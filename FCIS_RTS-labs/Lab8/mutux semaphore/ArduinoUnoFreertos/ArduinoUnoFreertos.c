@@ -22,9 +22,9 @@ int main(void)
 
 	if(xMutex != NULL)
 	{
-		 // create taska
+		 // create task a
 		 xTaskCreate(TaskA,"Task A",256,NULL,1,NULL);
-		 //create taskb 
+		 //create task b 
 		xTaskCreate(TaskB,"Task B",256,NULL,1,NULL);
 
 		vTaskStartScheduler();
@@ -71,7 +71,7 @@ void TaskB(void *pvParameters)
 			xSemaphoreGive(xMutex);	
 		}
 
-	//delaay for 500
+	//delay for 500
 	vTaskDelay(500);
 	}
 }

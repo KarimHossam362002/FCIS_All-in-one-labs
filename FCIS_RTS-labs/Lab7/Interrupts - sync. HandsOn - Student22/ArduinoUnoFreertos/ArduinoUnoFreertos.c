@@ -42,10 +42,11 @@ static void car_enter(void *pvParameters)
 	{
 		//todo 3
 		// take the semaphore inside the if and put portMAX_DELAY in the second parameter
-		 if (xSemaphoreTake(ParkingSem,portMAX_DELAY) )
+		 if (xSemaphoreTake(ParkingSem,portMAX_DELAY) ) // pdTRUE
 		{
 			USART_sendstr("?? Car ENTERED the parking.\r\n");
 			USART_sendstr("Available spots: \r\n\n");
+			
 			char msg[50];
 			//sprintf(msg, "Parking Spots Available: %d\r\n", uxSemaphoreGetCount(ParkingSem));
 			USART_sendstr(msg);

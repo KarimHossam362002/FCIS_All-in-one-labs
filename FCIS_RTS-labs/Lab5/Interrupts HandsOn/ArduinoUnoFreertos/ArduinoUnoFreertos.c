@@ -33,6 +33,7 @@ int main(void)
 	// 1. disable global interrupt
 	cli();
 	// 2. assign vGetNextTrack method to external Int0 attachinter
+	// low input =0
 	attachInterrupt(0, vGetNextTrack, 1);
    USART_init();
     /* The queue is created to hold a maximum of 5 long values. */
@@ -61,7 +62,7 @@ static void vGetNextTrack()
   {
 	// todo #2
  	// 1. set lValueToSend to the right track
-	  lValueToSend = (char *)playList[playListIndex];
+	  lValueToSend = (char *)playList[playListIndex]; // TRACK 1 [0]
  	// 2. send lValueToSend to Queue using appropriate methods 'suffix by FromISR'
 	 lastInterrupt = xQueueSendFromISR(xQueue, &lValueToSend, 0);
     //if( xStatus != pdPASS )

@@ -44,6 +44,7 @@ int main(void)
     DDRC = 0xff;
 	xTaskCreate( producer, "Producer", 256, NULL, 1, &TaskHandle_1 );
 	xTaskCreate( consumer, "Consumer", 256, NULL, 3, &TaskHandle_2 );
+	
 	USART_sendstr("TESTING");
 	vTaskStartScheduler();
 	 }

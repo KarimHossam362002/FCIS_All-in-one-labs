@@ -27,10 +27,10 @@ void Task1(void* para)
 		2. implement the mentioned conditions.
 		
 		*/
-		USART_sendstr("Type character d , i , s , r \r\n");
-		char c = USART_receive(); // input
+		USART_sendstr("Type character d , i , s , r \r\n"); // cout << string
+		char c = USART_receive(); // input // cin >> c
 		USART_sendstr("you Typed : \n");
-		USART_send(c);
+		USART_send(c); //
 		// Double
 		if (c == 'd'){
 			xTimerChangePeriod(Timer_Function1,period*2,100);
@@ -70,7 +70,7 @@ int main(void) {
 	Timer_Function1 = xTimerCreate("Timer1",100,pdTRUE,NULL,MyTimer);
 	xTimerStart(Timer_Function1,100);
 	
-	xTaskCreate(Task1,"Task1",256,NULL,1,NULL);
+	xTaskCreate(Task1,"Task1",256,NULL,1,NULL); // 
 	
 	vTaskStartScheduler();
 	
